@@ -1,0 +1,29 @@
+<style>
+  .box {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+  }
+
+  .btn {
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+
+<h1>test</h1>
+<div>
+  <button class="btn" (click)="resetTable()">Reset</button>
+  <button class="btn" (click)="startGame()">Start</button>
+  <button class="btn" (click)="stopGame()">Stop</button>
+</div>
+<table>
+  <tr *ngFor="let r of rowRange">
+    <td *ngFor="let c of colRange">
+      <div class="box" (click)="cellSelected(r,c)">
+        <div class="box" style="background-color: black;" *ngIf="isCellAlive(r,c)"></div>
+      </div>
+    </td>
+  </tr>
+</table>
